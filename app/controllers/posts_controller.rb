@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    redirect_to new_post_path
   end
 
   def show
@@ -9,13 +9,15 @@ class PostsController < ApplicationController
   end
 
   def new
+    @posts = Post.all
     @post = Post.new
+    render :index
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to new_post_path
     else
       render :new
     end

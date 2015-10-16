@@ -3,11 +3,16 @@
 <%= form_for @post do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.label :story %>
-  <%= f.text_field :story %>
-  <%= f.label :url %>
+
+  <%= f.label :image %>
   <%= f.text_field :url %>
+  <br><br>
+  <%= f.label :story %>
+  <%= f.text_area :story, :placeholder => "let's hear it." %>
+  (this box changes sizes)
+  <br>
   <%= f.submit %>
-<% end %>    
+<% end %>
