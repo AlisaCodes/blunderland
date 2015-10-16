@@ -5,6 +5,26 @@
   <% end %>
 </ul>
 
+<% if @post.tags.any? %>
+  <h4>Tags:</h4>
+
+<ul>
+  <% @post.tags.each do |tag| %>
+    <%= tag.category %>
+  <% end %>
+</ul>
+  <% else %>
+    <h4> No tags. </h4>
+  <% end %>
+
+
+
+
+
+
+
+
+
 <h2> What happened? </h2>
 
 <%= render "form" %>

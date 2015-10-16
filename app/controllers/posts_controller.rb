@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   def new
     @posts = Post.all
     @post = Post.new
+    @tags = Tag.all
+    @tag = Tag.new
     render :index
   end
 
