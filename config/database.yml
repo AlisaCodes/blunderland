@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: cool_blog_development
+
+test:
+  <<: *default
+  database: cool_blog_test
+
+production:
+  <<: *default
+  database: cool_blog_production
+  username: cool_blog
+  password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>
