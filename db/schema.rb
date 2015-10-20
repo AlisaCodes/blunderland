@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020040358) do
+ActiveRecord::Schema.define(version: 20151020041542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "change_column_names", force: :cascade do |t|
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string   "name"
+    t.string   "user_name"
     t.string   "title"
     t.string   "story"
     t.string   "url"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151020040358) do
   add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string   "category"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
